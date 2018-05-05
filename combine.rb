@@ -1,15 +1,22 @@
+# HTSeq で得られたカウントデータを1つのCSVファイルにまとめる
+
+# Ruby で CSV をあつかうためのライブラリ
 require 'csv'
 
+# ファイル名でソート（適宜書き換え）
 files = Dir.glob('rep2/*.fastq.txt').sort_by { |f| f[13..14].to_i }
 
 data = [['geneid']]
 
+# 1番目のファイルから gene id をdataに入れる
+# すべてのCSVファイルの gene id が同じようについている前提
 File.open(files[0]) do |f|
   f.each_line do |l|
     data << [l.split("\t")[0]]
   end
 end
 
+# それぞれのファイルの1列をdataに入れる
 files.each do |fname|
   data[0] << File.basename(fname, '.fastq.txt')
   File.open(fname) do |f|
@@ -19,6 +26,7 @@ files.each do |fname|
   end
 end
 
+# CSV ファイルに書き込む
 CSV.open('rep2/result.csv', 'wb') do |csv|
   data.each do |d|
     csv << d
