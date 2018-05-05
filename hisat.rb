@@ -11,7 +11,7 @@ Parallel.each(files, in_processes: 2) do |f|
   base = File.basename(f, '.notail.fastq')
 
   # hisat2 コマンド
-  s = "hisat2 -p 8 -x mm10/genome --dta -U #{f} -S mapping/#{base}.sam " +
+  s = "hisat2 -p 8 -x mm10/genome --dta -U #{f} -S mapping/#{base}.sam " \
       "2> mapping/#{base}.txt" # 標準エラー出力をファイル保存
 
   # コンソールにコマンド出力
