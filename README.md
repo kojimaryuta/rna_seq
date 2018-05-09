@@ -5,6 +5,7 @@ RNA-seq の簡単なワークフローです
 
 * 使用しているソフトウェア
   * [SeqKit](http://bioinf.shenwei.me/seqkit/)
+    * [seqkitを用いたFASTAのフィルタリング・ソート](http://yokazaki.hatenablog.com/entry/2017/01/16/160652)
   * [PRINSEQ](http://prinseq.sourceforge.net/)
   * [HISAT2](https://ccb.jhu.edu/software/hisat2/)
   * [SAMtools](http://www.htslib.org/)
