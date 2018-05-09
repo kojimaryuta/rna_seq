@@ -4,6 +4,7 @@ RNA-seq の簡単なワークフローです
 に基づいています。
 
 * 使用しているソフトウェア
+  * SeqKit
   * PRINSEQ
   * HISAT2
   * SAMtools

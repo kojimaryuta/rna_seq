@@ -1,3 +1,6 @@
+# シークエンスの状態をチェックする
+seqkit stat *.fastq
+
 # qc2 フォルダを作成する
 mkdir qc2
 
