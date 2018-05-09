@@ -3,15 +3,22 @@
 # シークエンスの状態をチェックする
 seqkit stat *.fastq
 
-# fastqc_report フォルダを作成する
-mkdir fastqc_report
-fastqc --nogroup -t 16 -o fastqc_report *.fastq 
+# fastqc_before フォルダを作成する
+mkdir fastqc_before
+# FastQC を実行する
+fastqc --nogroup -t 16 -o fastqc_before *.fastq 
 
 # qc2 フォルダを作成する
 mkdir qc2
-
 # クオリティコントロール
 ruby qc2.rb
+
+# シークエンスの状態をチェックする
+seqkit stat qc2/*.fastq
+# fastqc_after フォルダを作成する
+mkdir fastqc_after
+# FastQC を実行する
+fastqc --nogroup -t 16 -o fastqc_after qc2/*.notail.fastq 
 
 # mapping フォルダを作成する
 mkdir mapping
