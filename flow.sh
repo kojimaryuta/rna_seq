@@ -28,7 +28,7 @@ ruby stringtie.rb
 # rep2 フォルダを作成する
 mkdir rep2
 
-# htseq でRNAの配列を数える
+# htseq でRNAのリード数を数える
 ruby htseq.rb
 
 # htseq で出力されたデータをひとつのCSVファイルにまとめる

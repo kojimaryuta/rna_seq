@@ -1,9 +1,16 @@
+# IGV(ゲノムブラウザ)で閲覧するためのindexを作成する
+
+# Ruby でマルチプロセスするためのライブラリ
 require 'parallel'
 
-files = Dir.glob("bam/*_sorted.bam").sort
+# bam ディレクトリ以下の _sorted.bam ファイルを処理
+files = Dir.glob('bam/*_sorted.bam').sort
 
-Parallel.each(files, in_processes:16) do |f|
+# CPU 16 コア
+Parallel.each(files, in_processes: 16) do |f|
+  # コマンド
   s = "samtools index #{f}"
-  puts s
-  system s
+
+  puts s   # コマンド出力
+  system s # 実行
 end
