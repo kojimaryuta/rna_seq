@@ -1,5 +1,11 @@
+# fastq ファイルと同じディレクトリで実行するものとする
+
 # シークエンスの状態をチェックする
 seqkit stat *.fastq
+
+# fastqc_report フォルダを作成する
+mkdir fastqc_report
+fastqc --nogroup -t 16 -o fastqc_report *.fastq 
 
 # qc2 フォルダを作成する
 mkdir qc2
