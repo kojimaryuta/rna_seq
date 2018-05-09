@@ -4,16 +4,16 @@ RNA-seq の簡単なワークフローです
 に基づいています。
 
 * 使用しているソフトウェア
-  * SeqKit
-  * PRINSEQ
-  * HISAT2
-  * SAMtools
-  * IGV (Integrative Genomics Viewer)
-  * StringTie
-  * HTSeq
+  * [SeqKit](http://bioinf.shenwei.me/seqkit/)
+  * [PRINSEQ](http://prinseq.sourceforge.net/)
+  * [HISAT2](https://ccb.jhu.edu/software/hisat2/)
+  * [SAMtools](http://www.htslib.org/)
+  * [IGV (Integrative Genomics Viewer)](http://software.broadinstitute.org/software/igv)
+  * [StringTie](https://ccb.jhu.edu/software/stringtie/)
+  * [HTSeq](https://htseq.readthedocs.io/)
 
-* Ruby
-  * parallel
+* [Ruby](https://www.ruby-lang.org/)
+  * [parallel](https://github.com/grosser/parallel)
 
 実行
 ```bash
