@@ -20,7 +20,7 @@ task :seqkit2 do
 end
 
 desc "QC後のクオリティチェックを行う"
-task :fastq_after do
+task :fastqc_after do
   directory "fastqc_after"
   sh "fastqc --nogroup -t 16 -o fastqc_after qc2/*.notail.fastq"
 end
