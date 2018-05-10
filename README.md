@@ -22,7 +22,22 @@ RNA-seq の簡単なワークフローです
 
 ## 実行
 git clone して、dataフォルダを作成し、内部にfastqファイルを配置する。
-タスクの表示
+```bash
+├── README.md
+├── Rakefile
+├── bam.rake
+├── combine.rake
+├── config.rb
+├── data
+│   ├── sample1.fastq
+│   └── sample2.fastq
+├── hisat2.rake
+├── htseq.rake
+├── index.rake
+├── prinseq.rake
+└── stringtie.rake
+```
+Rakeタスクの表示
 ```bash
 rake -T
 ```
