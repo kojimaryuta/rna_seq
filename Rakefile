@@ -22,7 +22,7 @@ end
 desc "QC後のクオリティチェックを行う"
 directory "fastqc_after"
 task :fastqc_after do
-  sh "fastqc --nogroup -t 16 -o fastqc_after qc2/*.notail.fastq"
+  sh "fastqc --nogroup -t 16 -o fastqc_after prinseq/*.notail.fastq"
 end
 
 # マッピングを行う
