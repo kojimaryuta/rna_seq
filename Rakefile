@@ -2,7 +2,7 @@
 
 desc "シークエンスの状態をチェックする"
 task :seqkit do
-  sh "seqkit stat *.fastq"
+  sh "seqkit stat *.fastq | tee seqkit.txt"
 end
 
 desc "FastQCでクオリティチェックを行う"
@@ -16,7 +16,7 @@ load './prinseq.rake'
 
 desc "QC後のシークエンスの状態をチェックする"
 task :seqkit2 do
-  sh "seqkit stat qc2/*.fastq"
+  sh "seqkit stat qc2/*.fastq | tee seqkit2.txt"
 end
 
 desc "QC後のクオリティチェックを行う"
