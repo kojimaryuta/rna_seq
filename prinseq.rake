@@ -4,7 +4,7 @@ desc 'prinseq-lite でクオリティコントロール'
 directory 'prinseq'
 task :prinseq do
   # ディレクトリ内のfastqファイルについて操作
-  files = Dir.glob('*.fastq').sort
+  files = Dir.glob('data/*.fastq').sort
 
   Parallel.each(files, in_proesses: 8) do |f|
     base = File.basename(f, '.fastq')

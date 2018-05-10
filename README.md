@@ -24,11 +24,36 @@ RNA-seq の簡単なワークフローです
 ```bash
 rake -T
 ```
-CPUのコア数、ディレクトリの構成によって適宜スクリプトを書き換える
+そのままだときちんと動かないのでCPUのコア数、ディレクトリの構成によって適宜スクリプトを書き換える
+
+* シークエンスの状態をチェックする
+  * rake seqkit
+* FastQC でクオリティチェックを行う
+  * rake fastqc_before
+* (クオリティコントロール）
+  * (rake prinseq)
+* (prinseq後のリードの状態をチェックする）
+  * (rake seqki2)
+* (prinseq後のクオリティをチェックする）
+  * (rake fastqc_after)
+* Hisat2でマッピングを行う
+  * rake hisat2
+* sam → bam ファイルの作成とソート
+  * rake bam
+* IGV(ゲノムブラウザ)で閲覧するためのindexを作成する* 
+  * rake index
+* StringTie でRNAの配列を数える
+  * rake stringtie
+* HTSeq でRNAのリード数を数える
+  * rake htseq
+* HTSeqで得られたカウントを1つのCSVファイルにする
+  * rake combine
+
 
 ## 準備
-* [bioconda](https://bioconda.github.io/)
-  * [biocondaを利用してNGS関連のソフトウェアを一括でインストールする](http://imamachi-n.hatenablog.com/entry/2017/01/14/212719)
+* [Anaconda](https://www.anaconda.com/) を導入する
+  * [bioconda](https://bioconda.github.io/)
+    * [biocondaを利用してNGS関連のソフトウェアを一括でインストールする](http://imamachi-n.hatenablog.com/entry/2017/01/14/212719)
 
 * hisat2 のインデックスファイル
 * GTF ファイル(アノテーション情報）
