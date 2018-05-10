@@ -9,7 +9,7 @@ task hisat2: "mapping" do
   # ディレクトリ作成
 
   # 同じディレクトリ内のfastqファイルについて処理を行う
-  files = Dir.glob('*.fastq').sort
+  files = Dir.glob('data/*.fastq').sort
 
   # AMD RYZEN 16コアでは、2プロセス x 8スレッド が効率的
   Parallel.each(files, in_processes: 2) do |f|
