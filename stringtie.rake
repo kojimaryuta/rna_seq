@@ -1,7 +1,5 @@
 # StringTie でRNAの配列を数える
 
-GTF_PATH = 'mm10/Annotation/Genes/genes.gtf'
-
 # Ruby でマルチプロセスするためのライブラリ
 require 'parallel'
 

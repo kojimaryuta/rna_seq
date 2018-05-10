@@ -1,4 +1,5 @@
 # fastq ファイルと同じディレクトリで実行するものとする
+load './config.rb'
 
 desc "シークエンスの状態をチェックする"
 task :seqkit do
