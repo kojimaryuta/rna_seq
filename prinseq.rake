@@ -1,8 +1,8 @@
 require 'parallel'
 
-directory 'qc2'
 desc 'prinseq-lite でクオリティコントロール'
-task prinseq: 'qc2' do
+directory 'prinseq'
+task :prinseq do
   # ディレクトリ内のfastqファイルについて操作
   files = Dir.glob('*.fastq').sort
 
@@ -20,7 +20,7 @@ task prinseq: 'qc2' do
         '-trim_qual_right 30 ' \
         '-ns_max_p 20 ' \
         '-min_len 30 ' \
-        "2> qc2/#{base}.txt" # 標準エラー出力をファイルに保存
+        "2> prinseq/#{base}.txt" # 標準エラー出力をファイルに保存
 
     # コンソールへコマンド出力
     puts s
