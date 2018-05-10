@@ -20,7 +20,15 @@ RNA-seq の簡単なワークフローです
   * [rake](https://docs.ruby-lang.org/ja/latest/library/rake.html)
   * [parallel](https://github.com/grosser/parallel)
 
-実行
+## 実行
 ```bash
 rake -T
 ```
+CPUのコア数、ディレクトリの構成によって適宜スクリプトを書き換える
+
+## 準備
+* [bioconda](https://bioconda.github.io/)
+  * [biocondaを利用してNGS関連のソフトウェアを一括でインストールする](http://imamachi-n.hatenablog.com/entry/2017/01/14/212719)
+
+* hisat2 のインデックスファイル
+* GTF ファイル(アノテーション情報）
