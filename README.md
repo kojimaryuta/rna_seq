@@ -15,9 +15,10 @@ RNA-seq の簡単なワークフローです
   * [HTSeq](https://htseq.readthedocs.io/)
 
 * [Ruby](https://www.ruby-lang.org/)
+  * [rake](https://docs.ruby-lang.org/ja/latest/library/rake.html)
   * [parallel](https://github.com/grosser/parallel)
 
 実行
 ```bash
-sh flow.sh
+rake -T
 ```
