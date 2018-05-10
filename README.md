@@ -21,34 +21,36 @@ RNA-seq の簡単なワークフローです
   * [parallel](https://github.com/grosser/parallel)
 
 ## 実行
+git clone して、dataフォルダを作成し、内部にfastqファイルを配置する。
+タスクの表示
 ```bash
 rake -T
 ```
 そのままだときちんと動かないのでCPUのコア数、ディレクトリの構成によって適宜スクリプトを書き換える
 
-* シークエンスの状態をチェックする
-  * rake seqkit
-* FastQC でクオリティチェックを行う
-  * rake fastqc_before
-* (クオリティコントロール）
-  * (rake prinseq)
-* (prinseq後のリードの状態をチェックする）
-  * (rake seqki2)
-* (prinseq後のクオリティをチェックする）
-  * (rake fastqc_after)
-* Hisat2でマッピングを行う
-  * rake hisat2
-* sam → bam ファイルの作成とソート
-  * rake bam
-* IGV(ゲノムブラウザ)で閲覧するためのindexを作成する* 
-  * rake index
-* StringTie でRNAの配列を数える
-  * rake stringtie
-* HTSeq でRNAのリード数を数える
-  * rake htseq
-* HTSeqで得られたカウントを1つのCSVファイルにする
-  * rake combine
+```console
+rake seqkit         # シークエンスの状態をチェックする
 
+rake fastqc_before  # FastQCでクオリティチェックを行う
+
+rake prinseq        # prinseq-lite でクオリティコントロール
+
+rake seqkit2        # QC後のシークエンスの状態をチェックする
+
+rake fastqc_after   # QC後のクオリティチェックを行う
+
+rake hisat2         # hisat2でマッピング
+
+rake bam            # sam → bam ファイルの作成とソート
+
+rake index          # IGV(ゲノムブラウザ)で閲覧するためのindexを作成する
+
+rake stringtie      # StringTie でRNAの配列を数える
+
+rake htseq          # HTSeq で RNA のリード数をカウントする
+
+rake combine        # HTSeq で得られたカウントデータを1つのCSVファイルにまとめる
+```
 
 ## 準備
 * [Anaconda](https://www.anaconda.com/) を導入する
