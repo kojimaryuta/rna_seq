@@ -3,12 +3,12 @@
 # Ruby でマルチプロセスするためのライブラリ
 require 'parallel'
 
+# リファレンス (遺伝子のアノテーション情報) ファイルのパス
+GTF_PATH = 'mm10_gtf/Annotation/Genes/genes.gtf'
+
+directory "htseq"
 desc 'HTSeq で RNA のリード数をカウントする'
 task :htseq do
-  directory "htseq"
-
-  # リファレンス (遺伝子のアノテーション情報) ファイルのパス
-  GTF_PATH = 'mm10_gtf/Annotation/Genes/genes.gtf'.freeze
 
   # bam ディレクトリ以下の _sorted.bam ファイルを処理
   files = Dir.glob('bam/*_sorted.bam').sort

@@ -1,15 +1,13 @@
 # StringTie でRNAの配列を数える
 
-GTF_PATH = 'mm10_gtf/Annotation/Genes/genes.gtf'.freeze
+GTF_PATH = 'mm10/Annotation/Genes/genes.gtf'
 
 # Ruby でマルチプロセスするためのライブラリ
 require 'parallel'
 
+directory "stringtie"
 desc 'StringTie でRNAの配列を数える'
 task :stringtie do
-
-  # ディレクトリの作成
-  directory "stringtie"
 
   # bam ディレクトリ以下の _sorted.bam ファイルを処理
   files = Dir.glob('bam/*_sorted.bam').sort
