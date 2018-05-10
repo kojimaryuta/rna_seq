@@ -10,6 +10,7 @@ RNA-seq の簡単なワークフローです
     * [FastQC | FASTQ クオリティコントロール](https://bi.biopapyrus.jp/rnaseq/qc/fastqc.html)
   * [PRINSEQ](http://prinseq.sourceforge.net/)
   * [HISAT2](https://ccb.jhu.edu/software/hisat2/)
+    * [hisat2のインデックスファイル](ftp://ftp.ccb.jhu.edu/pub/infphilo/hisat2/data)
   * [SAMtools](http://www.htslib.org/)
   * [IGV (Integrative Genomics Viewer)](http://software.broadinstitute.org/software/igv)
   * [StringTie](https://ccb.jhu.edu/software/stringtie/)
