@@ -7,6 +7,7 @@ RNA-seq の簡単なワークフローです
   * [SeqKit](http://bioinf.shenwei.me/seqkit/)
     * [seqkitを用いたFASTAのフィルタリング・ソート](http://yokazaki.hatenablog.com/entry/2017/01/16/160652)
   * [FastQC](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/)
+    * [FastQC | FASTQ クオリティコントロール](https://bi.biopapyrus.jp/rnaseq/qc/fastqc.html)
   * [PRINSEQ](http://prinseq.sourceforge.net/)
   * [HISAT2](https://ccb.jhu.edu/software/hisat2/)
   * [SAMtools](http://www.htslib.org/)

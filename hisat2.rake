@@ -3,15 +3,15 @@
 # Rubyでマルチプロセスするためのライブラリ
 require 'parallel'
 
+directory "mapping"
 desc 'hisat2でマッピング'
-task :hisat2 do
+task hisat2: "mapping" do
   # ディレクトリ作成
-  directory "mapping"
 
   # 同じディレクトリ内のfastqファイルについて処理を行う
   files = Dir.glob('*.fastq').sort
 
-  # AMD RYZEN 16コアで、2プロセス x 8スレッド が効率的
+  # AMD RYZEN 16コアでは、2プロセス x 8スレッド が効率的
   Parallel.each(files, in_processes: 2) do |f|
     base = File.basename(f, '.notail.fastq')
 

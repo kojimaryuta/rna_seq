@@ -3,10 +3,10 @@
 # Ruby でマルチプロセスするためのライブラリ
 require 'parallel'
 
+directory 'bam'
 desc 'sam → bam ファイルの作成とソート'
 task :bam do
   # ディレクトリの作成
-  directory 'bam'
 
   # mappingディレクトリ以下の、samファイルを操作
   files = Dir.glob('mapping/*.sam').sort.map do |f|
