@@ -74,3 +74,6 @@ rake combine        # HTSeq で得られたカウントデータを1つのCSVフ
 
 * hisat2 のインデックスファイル
 * GTF ファイル(アノテーション情報）
+
+## TODO
+* MultiQC 
